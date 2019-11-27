@@ -1,0 +1,35 @@
+
+.image{
+	height:40em; 
+	background-size:cover;
+	width:auto;
+	background-image:url('/assets/rencontre2.jpg');
+	background-position:50% 50%;
+}
+
+.bouton1 {
+	border-radius:12px 0 12px 0;
+	width:200px;
+	height: 50px; 
+	position:absolute; top:70%; left:40%; 
+	background: #ea8852;
+	color: #000000;
+	font:bold 13px Arial;
+	box-shadow:7px 7px 10px #f7b985;
+	border:none;
+
+
+}
+
+.bouton2 {
+	border-radius:12px 0 12px 0;
+	width:200px;
+	height: 50px; 
+	position:absolute; top:80%; left:40%; 
+	background: #ea8852;
+	color: #000000;
+	font:bold 13px Arial;
+	box-shadow:7px 7px 10px #f7b985;
+	border:none;
+
+}
