@@ -4,6 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import {MatDialogModule} from '@angular/material'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -14,8 +18,15 @@ import { ConnexionComponent } from './connexion/connexion.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
+  entryComponents :[
+    ConnexionComponent,
+    InscriptionComponent
+  ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
