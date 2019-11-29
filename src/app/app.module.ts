@@ -7,6 +7,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import {MatDialogModule} from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon'; 
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -22,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatDialogModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatInputModule
     
   ],
   entryComponents :[

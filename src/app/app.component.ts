@@ -17,7 +17,9 @@ export class AppComponent {
   openDialogConnexion(): void {
     const dialogRef = this.dialog.open(ConnexionComponent, {
       width : "400px",
-      height : "600px"
+      height : "600px",
+    
+      backdropClass: 'backdropBackground'
     });
   
     dialogRef.afterClosed().subscribe(result => {
@@ -29,7 +31,8 @@ export class AppComponent {
   openDialogInscription(): void {
     const dialogRef = this.dialog.open(InscriptionComponent, {
       width : "400px",
-      height : "600px"
+      height : "600px",
+
 
     });
   
