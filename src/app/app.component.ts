@@ -14,16 +14,28 @@ export class AppComponent {
   constructor(public dialog: MatDialog) {} 
 
   title = 'site';
-  openDialog(): void {
-    const dialogRef1 = this.dialog.open(ConnexionComponent, {
+  openDialogConnexion(): void {
+    const dialogRef = this.dialog.open(ConnexionComponent, {
+      width : "400px",
+      height : "600px"
     });
-    const dialogRef2 = this.dialog.open(InscriptionComponent, {
-    });
-    dialogRef1.afterClosed().subscribe(result => {
+  
+    dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
-    dialogRef2.afterClosed().subscribe(result => {
+  
+  }
+
+  openDialogInscription(): void {
+    const dialogRef = this.dialog.open(InscriptionComponent, {
+      width : "400px",
+      height : "600px"
+
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  
   }
 }
