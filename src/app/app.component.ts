@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog} from '@angular/material'
 import { ConnexionComponent } from './connexion/connexion.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 @Component({
   selector: 'app-root',
@@ -15,10 +15,14 @@ export class AppComponent {
 
   title = 'site';
   openDialog(): void {
-    const dialogRef = this.dialog.open(ConnexionComponent, {
+    const dialogRef1 = this.dialog.open(ConnexionComponent, {
     });
-
-    dialogRef.afterClosed().subscribe(result => {
+    const dialogRef2 = this.dialog.open(InscriptionComponent, {
+    });
+    dialogRef1.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+    dialogRef2.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
