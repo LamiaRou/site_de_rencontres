@@ -5,3 +5,7 @@
 .backdropBackground {
    background-image: url('/assets/rencontre2.jpg');
   }
+
+.backdropBackground_inscription {
+   background-image: url('/assets/rencontre3.jpg');
+  }

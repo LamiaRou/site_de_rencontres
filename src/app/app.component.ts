@@ -33,7 +33,7 @@ export class AppComponent {
       width : "400px",
       height : "600px",
 
-
+      backdropClass: 'backdropBackground_inscription'
     });
   
     dialogRef.afterClosed().subscribe(result => {
