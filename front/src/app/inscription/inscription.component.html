@@ -1,27 +1,26 @@
+<mat-icon (click)="onNoClick()" class="iconClose">highlight_off</mat-icon>
 
-<mat-icon (click)="onNoClick()" class="iconClose" >highlight_off</mat-icon>
-
-<form class="example-form">
+<form class="example-form" #userForm="ngForm">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Prenom" >
-    </mat-form-field>
-  
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Pseudo" >
-      </mat-form-field>
-    
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Adresse E-mail" >
+        <input matInput placeholder="Prenom" ngModel name="name">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Mot de passe" >
+        <input matInput placeholder="Pseudo" ngModel name="pseudo">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="COnfirmation Mot de passe" >
+        <input matInput placeholder="Adresse E-mail" ngModel name="mail">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Mot de passe" ngModel name="password">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Confirmation Mot de passe" ngModel name="passeword_confirm">
     </mat-form-field>
 
 </form>
 
-<button class="boutonInscription"> Inscription !</button>
+<button class="boutonInscription" (click)="onRegister(userForm.value)"> Inscription !</button>
