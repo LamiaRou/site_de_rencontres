@@ -11,4 +11,5 @@
 </form>
 
 
-<button [routerLink]="'profile'" class="boutonConnexion" (click)="onLogin(userForm.value)"> C'est Parti !</button>
+<button routerLink="/profil" class="boutonConnexion" (click)="onLogin(userForm.value)"> C'est Parti !</button>
+<router-outlet></router-outlet>
