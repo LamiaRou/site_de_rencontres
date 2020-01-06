@@ -6,9 +6,9 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Mot de passe" ngModel name="password">
+        <input type="password" matInput placeholder="Mot de passe" ngModel name="password">
     </mat-form-field>
 </form>
 
 
-<button class="boutonConnexion" (click)="onLogin(userForm.value)"> C'est Parti !</button>
+<button [routerLink]="'profile'" class="boutonConnexion" (click)="onLogin(userForm.value)"> C'est Parti !</button>

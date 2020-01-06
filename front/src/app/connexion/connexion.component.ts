@@ -3,6 +3,7 @@ import {MatDialogRef} from '@angular/material'
 import {AppComponent} from '../app.component';
 import {HttpClient} from "@angular/common/http";
 import {NgForm} from "@angular/forms";
+import { AuthService } from '../auth.service';
 
 @Component({
     selector: 'app-connexion',
@@ -14,7 +15,7 @@ export class ConnexionComponent implements OnInit {
     constructor(
         public dialogRef: MatDialogRef<AppComponent>,
         //@Inject(MAT_DIALOG_DATA) public data: DialogData
-        private httpClient: HttpClient) {
+        private authservice: AuthService) {
     }
 
     onNoClick(): void {
@@ -25,17 +26,8 @@ export class ConnexionComponent implements OnInit {
     }
 
     onLogin(user) {
-        console.log(user)
-        this.httpClient.post('http://localhost:3000/auth/login', user).subscribe(
-            (val) => {
-                console.log('POST call successful value returned in body : ', val);
-            },
-            (response) => {
-                console.log('POST call in error', response);
-            },
-            () => {
-                console.log('The POST observable is now completed.');
-            }
-        );
+        console.log(user);
+        this.authservice.onLogin(user);
+
     }
 }
