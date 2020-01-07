@@ -1,9 +1,11 @@
+<div class="bg-img">
+
 <mat-toolbar>
   <span>Registration</span>
 </mat-toolbar>
 <br>
 <mat-card class="center">
-  <mat-card-content>
+  <mat-card-content >
     <form class="my-form" #user="ngForm">
       <mat-form-field class="full-width">
         <mat-label>First Name</mat-label>
@@ -48,10 +50,11 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </form>
-  </mat-card-content>
+  </mat-card-content >
 
   <mat-card-actions>
     <button mat-raised-button (click)="register(user.value)" color="primary">REGISTER</button>
   </mat-card-actions>
 
 </mat-card>
+</div>

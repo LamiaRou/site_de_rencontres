@@ -1,6 +1,9 @@
+<div class="bg-img">
+
 <mat-toolbar>
   <span>LOGIN</span>
 </mat-toolbar>
+<br> <br>
 <mat-card class="my-card" class="center">
   <mat-card-content>
     <form class="my-form" #user="ngForm">
@@ -15,10 +18,13 @@
       </mat-form-field>
     </form>
   </mat-card-content>
+
+  <br> <br> <br> <br>
   <mat-card-actions>
     <button mat-raised-button (click)="login(user.value)" color="primary">LOGIN</button>
   </mat-card-actions>
 </mat-card>
 <div>
   <h1>{{status}}</h1>
+</div>
 </div>
