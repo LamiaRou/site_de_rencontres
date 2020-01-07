@@ -1,37 +1,43 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { MyMaterialModule } from './material.module';
-import { RouterModule, Routes } from '@angular/router';
- 
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/login.component';
+import {MyMaterialModule} from './material.module';
+import {RouterModule} from '@angular/router';
+import {AuthService} from './service/auth.service';
+import {HttpClientModule} from '@angular/common/http';
+import {ProfileComponent} from './profile/profile.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MyMaterialModule,BrowserModule,
+    MyMaterialModule,
+    BrowserModule,
     BrowserAnimationsModule,
     MyMaterialModule,
+    HttpClientModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/', pathMatch: 'full' },
-      { path: 'register', component: RegisterComponent },
-      { path: 'login', component: LoginComponent },
-       
-     
+      {path: '', redirectTo: '/', pathMatch: 'full'},
+      {path: 'register', component: RegisterComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'profile/:id', component: ProfileComponent},
     ]),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
