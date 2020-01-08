@@ -22,10 +22,13 @@
         <input matInput placeholder="Address" ngModel name="address" >
       </mat-form-field>
       <br>
-      <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" ngModel name="email">
-      </mat-form-field>
+
+     <mat-form-field class="full-width"> 
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" [formControl]="email" ngModel name="email">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+     </mat-form-field>
+
       <br>
       <mat-form-field class="full-width">
         <mat-label>Password</mat-label>

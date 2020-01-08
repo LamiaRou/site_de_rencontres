@@ -10,7 +10,7 @@ import {RouterModule} from '@angular/router';
 import {AuthService} from './service/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
-
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +29,7 @@ import {ProfileComponent} from './profile/profile.component';
     BrowserAnimationsModule,
     MyMaterialModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '', redirectTo: '/', pathMatch: 'full'},
       {path: 'register', component: RegisterComponent},
