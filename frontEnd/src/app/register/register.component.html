@@ -30,10 +30,15 @@
      </mat-form-field>
 
       <br>
-      <mat-form-field class="full-width">
-        <mat-label>Password</mat-label>
-        <input  type="password" matInput placeholder="Password" ngModel name="password">
+
+      <div class="example-container">
+      <mat-form-field  class="full-width">
+        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" ngModel name="password" >
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
       </mat-form-field>
+      </div>
 
       <br>
       <section class="example-section">

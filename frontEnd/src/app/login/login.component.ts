@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../service/auth.service';
 import {Router} from "@angular/router";
+import {FormControl, Validators} from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -17,6 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(user) {
+    user.email = this.email.value;
     console.log(user)
     this.authService.login(user).then((value: any) => {
       console.log('login :', value);
@@ -27,4 +30,13 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
+  }
+
 }

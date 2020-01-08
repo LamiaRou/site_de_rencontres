@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   }
 
   register(user) {
+    user.email = this.email.value;
     console.log(user);
     this.authService.register(user).then((value: any) => {
       if (value === 'not_found') {
@@ -37,4 +38,6 @@ export class RegisterComponent implements OnInit {
         this.email.hasError('email') ? 'Not a valid email' :
             '';
   }
+
+  hide = true;
 }
