@@ -9,17 +9,17 @@
     <form class="my-form" #user="ngForm">
       <mat-form-field class="full-width">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First name" ngModel name="fname" required>
+        <input matInput placeholder="First name" ngModel name="fname" >
       </mat-form-field>
       <br>
       <mat-form-field class="full-width">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" ngModel name="lname" required>
+        <input matInput placeholder="Last Name" ngModel name="lname" >
       </mat-form-field>
       <br>
       <mat-form-field class="full-width">
         <mat-label>Address</mat-label>
-        <input matInput placeholder="Address" ngModel name="address" required>
+        <input matInput placeholder="Address" ngModel name="address" >
       </mat-form-field>
       <br>
       <mat-form-field class="full-width">
@@ -29,17 +29,17 @@
       <br>
       <mat-form-field class="full-width">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" ngModel name="password">
+        <input  type="password" matInput placeholder="Password" ngModel name="password">
       </mat-form-field>
 
       <br>
       <section class="example-section">
-        <label class="example-margin">Gender:</label><br>
+        <label class="example-margin">Gender:</label> <br>
         <br>
         <mat-radio-group ngModel name="gender">
-          <mat-radio-button class="example-margin" value="after">Male</mat-radio-button>
-          <mat-radio-button class="example-margin" value="before">Female</mat-radio-button>
-          <mat-radio-button class="example-margin" value="before">Other</mat-radio-button>
+          <mat-radio-button class="example-margin" value="Male">Male</mat-radio-button>
+          <mat-radio-button class="example-margin" value="Female">Female</mat-radio-button>
+          <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
         </mat-radio-group>
       </section>
       <br>
