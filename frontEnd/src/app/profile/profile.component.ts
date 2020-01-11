@@ -9,10 +9,10 @@ import {ActivatedRoute} from '@angular/router';
 })
 
 export class ProfileComponent implements OnInit {
-  user: any = {
+  profile: any = {
     id: 0,
-    email: 0,
-    password: ''
+    name: 0,
+    image: ''
   };
 
   constructor(private authService: AuthService, private route: ActivatedRoute) {
@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.authService.getProfile(this.route.snapshot.params.id).then(value => {
       console.log('profile : ', value);
-      this.user = value;
+      this.profile = value;
     });
   }
 }
