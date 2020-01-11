@@ -11,13 +11,15 @@ import {AuthService} from './service/auth.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import { ProfilesListComponent } from './profiles-list/profiles-list.component';
+import {ProfilesService} from './service/profiles.service';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfilesListComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +37,10 @@ import {ReactiveFormsModule} from '@angular/forms';
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
       {path: 'profile/:id', component: ProfileComponent},
+      {path: 'profiles', component: ProfilesListComponent},
     ]),
   ],
-  providers: [AuthService],
+  providers: [AuthService, ProfilesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,21 @@
+:host{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.preview{
+    margin: 0.5em;
+    display: block;
+
+    
+}
+.thumbnail{
+    width: 10em;
+    height: auto;
+}
+
+mat-card{
+    cursor: pointer;
+}
