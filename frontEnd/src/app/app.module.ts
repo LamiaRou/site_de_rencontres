@@ -13,13 +13,17 @@ import {ProfileComponent} from './profile/profile.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ProfilesListComponent } from './profiles-list/profiles-list.component';
 import {ProfilesService} from './service/profiles.service';
+import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    ProfilesListComponent
+    ProfilesListComponent,
+    UserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,11 +37,13 @@ import {ProfilesService} from './service/profiles.service';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: '/', pathMatch: 'full'},
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: 'home', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
       {path: 'profiles', component: ProfilesListComponent},
       {path: 'profiles/:id', component: ProfileComponent},
+      {path: 'user/:id', component: UserComponent},
     ]),
   ],
   providers: [AuthService, ProfilesService],

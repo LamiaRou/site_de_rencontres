@@ -20,9 +20,15 @@ export class AuthController {
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Get('profile')
-  async getProduct(@Req() req): Promise<any> {
+  @Get('user')
+  async getUser(@Req() req): Promise<any> {
     console.log(req.user);
     return await this.authService.getById(req.user.id);
+  }
+
+  @Post('profile')
+  async getProfile(@Req() req): Promise<any> {
+    console.log(req.body.id);
+    return await this.authService.getById(req.body.id);
   }
 }

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       if (value.status === 401) {
         this.status = 'not found';
       } else {
-        this.router.navigate(['profile/:', {id: value.access_token}]);
+        this.router.navigate(['user/:', {id: value.access_token}]);
       }
     });
   }

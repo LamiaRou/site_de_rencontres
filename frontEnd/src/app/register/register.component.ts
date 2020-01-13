@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
         console.log('not_found');
       } else {
         console.log('login :', value);
-        this.router.navigate(['profile/:', {id: value.access_token}]);
+        this.router.navigate(['user/:', {id: value.access_token}]);
       }
       console.log(user.fname)
     });

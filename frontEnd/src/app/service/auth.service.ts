@@ -47,11 +47,20 @@ export class AuthService {
   }
 
 
-  async getProfile(id) {
+  async getUser(id) {
     const headers = {headers: new HttpHeaders({Authorization: 'Bearer ' + id})};
     return await new Promise((resolve) => {
-      this.http.get('http://localhost:3000/auth/profile/', headers).subscribe(value => {
-        console.log('service : ', value);
+      this.http.get('http://localhost:3000/auth/user/', headers).subscribe(value => {
+        console.log('user : ', value);
+        resolve(value);
+      });
+    });
+  }
+
+  async getProfile(id) {
+    return await new Promise((resolve) => {
+      this.http.post('http://localhost:3000/auth/profile/', {id}).subscribe(value => {
+        console.log('profile : ', value);
         resolve(value);
       });
     });
