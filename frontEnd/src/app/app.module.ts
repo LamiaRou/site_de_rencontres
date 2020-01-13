@@ -15,6 +15,8 @@ import { ProfilesListComponent } from './profiles-list/profiles-list.component';
 import {ProfilesService} from './service/profiles.service';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,7 @@ import { HomeComponent } from './home/home.component';
     MyMaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
@@ -47,7 +50,8 @@ import { HomeComponent } from './home/home.component';
     ]),
   ],
   providers: [AuthService, ProfilesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule {
 }
