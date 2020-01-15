@@ -17,9 +17,11 @@
         <input matInput placeholder="Last Name" ngModel name="lname" >
       </mat-form-field>
       <br>
-      <mat-form-field class="full-width">
-        <mat-label>Address</mat-label>
-        <input matInput placeholder="Address" ngModel name="address" >
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Address postale</mat-label>
+        <input matInput #postalCode maxlength="5" placeholder="address" ngModel name="address">
+        <mat-hint>{{postalCode.value.length}} / 5</mat-hint>
       </mat-form-field>
       <br>
 
