@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UserComponent implements OnInit {
   profile: any = {
     id: 0,
-    name: 0,
+    name: '',
     image: ''
   };
 

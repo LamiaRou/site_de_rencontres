@@ -38,4 +38,13 @@ export class UserService {
       },
     });
   }
+
+  async setImage(str: string | string[], id: number) {
+    let user;
+    await this.findById(id).then(value => {
+      user = value;
+    });
+    user.image = str;
+    return await this.userRepository.save(user);
+  }
 }

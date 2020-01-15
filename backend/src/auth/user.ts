@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert } from 'typeorm';
+import { Optional } from '@nestjs/common';
 
 @Entity('users')
 export class User {
@@ -27,4 +28,10 @@ export class User {
   @Column()
   date: string;
 
+  @Column()
+  description : string;
+
+
+  @Column()
+  image : string;
 }

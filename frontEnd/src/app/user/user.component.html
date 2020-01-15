@@ -2,7 +2,8 @@
     <mat-card-content>
       <h1>{{profile.id}}</h1>
       <h1>{{profile.name}}</h1>
-      <h1>{{profile.password}}</h1>
+      <img [src]="'data:image/jpg;base64,'+profile.image">
+      <h1> {{profile.address}}</h1>
     </mat-card-content>
 </mat-card>
   
