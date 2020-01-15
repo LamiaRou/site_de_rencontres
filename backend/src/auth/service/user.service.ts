@@ -30,7 +30,9 @@ export class UserService {
       },
     });
   }
-
+  async findAll(): Promise<User[]> {
+    return await this.userRepository.find();
+  }
   async findByEmail(email: any) {
     return await this.userRepository.findOne({
       where: {

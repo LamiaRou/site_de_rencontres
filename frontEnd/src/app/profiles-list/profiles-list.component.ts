@@ -8,7 +8,7 @@ import {ProfilePreview} from './profile-preview'
 })
 export class ProfilesListComponent implements OnInit {
 selectedPokemons = {};
-	pokemons:ProfilePreview[];	
+	pokemons:any[];	
 	
 	Select(selectedPokemon:ProfilePreview){
 		this.pokemonService.togglePokemonSelected(selectedPokemon);
@@ -16,9 +16,17 @@ selectedPokemons = {};
 	constructor(private pokemonService:ProfilesService) { }
 	
 	ngOnInit() {
-		this.pokemonService.GetAll().subscribe((pokemons) => {
-			this.pokemons = pokemons;
-		})
+
+		console.log('init');
+		this.pokemonService.getAll().subscribe(
+		products => {
+			this.pokemons = products;
+			console.log(this.pokemons)
+
+		},
+		error => console.log(error)
+		);
+
 		this.pokemonService.selectedPokemons$.subscribe((selectedPokemons) => {
 			this.selectedPokemons = selectedPokemons.reduce((acc, current) => {
 				acc[current] = true;

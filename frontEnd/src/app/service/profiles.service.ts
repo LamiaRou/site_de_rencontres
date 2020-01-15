@@ -7,7 +7,28 @@ import {ProfilePreview} from '../profiles-list/profile-preview'
   providedIn: 'root'
 })
 export class ProfilesService {
-
+	products: any[] = null;
+	getAll(): Observable<any[]> {
+		if (this.products) {
+		  return of(this.products);
+		}
+		return (this.http.get('http://localhost:3000/auth/getProfiles/') as Observable<any[]>)
+		  .pipe(
+			map((products) => {
+			  return products.map((profileJson) => {
+				return {
+				  id: profileJson.id,
+				  fname: profileJson.fname,
+				  lname: profileJson.lname,
+				  image:profileJson.image
+				};
+			  });
+			}), tap((products) => {
+			  this.products = products;
+			  console.log(products);
+			})
+		  );
+	  }
 	selectedPokemons = new BehaviorSubject<number[]>([]);
 	selectedPokemons$ = this.selectedPokemons.asObservable();
 
@@ -22,27 +43,7 @@ export class ProfilesService {
 	}
 
 	cachedPokemons:ProfilePreview[] = null;
-	GetAll():Observable<ProfilePreview[]>{
-		if(this.cachedPokemons)
-			return of(this.cachedPokemons);
-		return (this.http.get('assets/pokedex.json') as Observable<any[]>)
-		.pipe(
-			map((pokemons) => {
-				return pokemons.map((pokemonJson) => {
-					let padId = `000${pokemonJson.id}`.slice(-3)
-					let pokemon = {
-						id: +pokemonJson.id,
-						name : pokemonJson.name.english,
-						thumbnail : `assets/thumbnails/${padId}.png`
-					} as ProfilePreview;
-					return pokemon;
-				});
-			}),
-			tap((pokemons) => {
-				this.cachedPokemons = pokemons;
-			})
-		)
-	}
+	
 	constructor(private http:HttpClient) {
 
 	}

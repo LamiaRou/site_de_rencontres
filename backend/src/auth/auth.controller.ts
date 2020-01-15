@@ -37,6 +37,12 @@ export class AuthController {
     return await this.authService.getById(req.body.id);
   }
 
+  @Get('getProfiles')
+  async getProfiles(): Promise<any> {
+    return await this.userService.findAll();
+  }
+
+
   @Post('maill')
   async getEmail(@Req() req): Promise<any> {
     console.log(req.body.email);

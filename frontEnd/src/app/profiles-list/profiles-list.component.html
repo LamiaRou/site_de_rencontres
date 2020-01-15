@@ -10,7 +10,7 @@
         <mat-card-content>
             <img
                 class="thumbnail"
-                [src]="profile.thumbnail"
+                [src]="'data:image/jpg;base64,'+profile.image"
                 [routerLink]=[profile.id]>
         </mat-card-content>
     </mat-card>
