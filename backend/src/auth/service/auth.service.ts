@@ -6,6 +6,7 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
+
   constructor(
     private readonly userService: UserService, private readonly jwtService: JwtService) {
   }
@@ -51,6 +52,12 @@ export class AuthService {
 
   async getById(id: any) {
     return await this.userService.findById(id).then(result => {
+      return result;
+    });
+  }
+
+  async getByEmail(email: any) {
+    return await this.userService.findByEmail(email).then(result => {
       return result;
     });
   }

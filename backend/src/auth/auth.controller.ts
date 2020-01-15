@@ -31,4 +31,10 @@ export class AuthController {
     console.log(req.body.id);
     return await this.authService.getById(req.body.id);
   }
+
+  @Post('maill')
+  async getEmail(@Req() req): Promise<any> {
+    console.log(req.body.email);
+    return await this.authService.getByEmail(req.body.email);
+  }
 }

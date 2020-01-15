@@ -28,7 +28,6 @@
       <input matInput placeholder="Email" [formControl]="email" ngModel name="email">
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
      </mat-form-field>
-
       <br>
 
       <div class="example-container">
@@ -63,6 +62,7 @@
   <mat-card-actions>
     <button mat-raised-button (click)="register(user.value)" color="primary">REGISTER</button>
   </mat-card-actions>
-
+  <p style="color: red;">{{mm}}</p>
 </mat-card>
+
 </div>

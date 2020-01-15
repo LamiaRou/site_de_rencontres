@@ -65,4 +65,13 @@ export class AuthService {
       });
     });
   }
+
+  async existanceMail(email) {
+    return await new Promise((resolve) => {
+      this.http.post('http://localhost:3000/auth/maill/', {email}).subscribe(value => {
+        console.log('email : ', value);
+        resolve(value);
+      });
+    });
+  }
 }

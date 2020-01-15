@@ -10,7 +10,7 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  mm = '';
   constructor(private authService: AuthService, private router: Router) {
   }
 
@@ -19,16 +19,24 @@ export class RegisterComponent implements OnInit {
 
   register(user) {
     user.email = this.email.value;
-    console.log(user);
-    this.authService.register(user).then((value: any) => {
-      if (value === 'not_found') {
-        console.log('not_found');
-      } else {
-        console.log('login :', value);
-        this.router.navigate(['user/:', {id: value.access_token}]);
+    this.authService.existanceMail(user.email).then((result)=>{
+      console.log(result);
+      if(result === null){
+        this.authService.register(user).then((value: any) => {
+          if (value === 'not_found') {
+            console.log('not_found');
+          } else {
+            console.log('login :', value);
+            this.router.navigate(['user/:', {id: value.access_token}]);
+          }
+          console.log(user.fname)
+        });
+      }else{
+        this.mm = 'This email already exists';
       }
-      console.log(user.fname)
     });
+
+
   }
 
   email = new FormControl('', [Validators.required, Validators.email]);
