@@ -6,26 +6,26 @@
 <br>
 <mat-card class="center">
   <mat-card-content >
-    <form class="my-form" #user="ngForm">
-      <mat-form-field class="full-width">
+    <form #user="ngForm">
+      <mat-form-field>
         <mat-label>First Name</mat-label>
         <input matInput placeholder="First name" ngModel name="fname" >
       </mat-form-field>
       <br>
-      <mat-form-field class="full-width">
+      <mat-form-field>
         <mat-label>Last Name</mat-label>
         <input matInput placeholder="Last Name" ngModel name="lname" >
       </mat-form-field>
       <br>
 
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <mat-label>Address postale</mat-label>
         <input matInput #postalCode maxlength="5" placeholder="address" ngModel name="address">
         <mat-hint>{{postalCode.value.length}} / 5</mat-hint>
       </mat-form-field>
       <br>
 
-     <mat-form-field class="full-width"> 
+     <mat-form-field> 
       <mat-label>Email</mat-label>
       <input matInput placeholder="Email" [formControl]="email" ngModel name="email">
       <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
@@ -42,13 +42,13 @@
       </div>
 
       <br>
-      <section class="example-section">
-        <label class="example-margin">Gender:</label> <br>
+      <section>
+        <labe>Gender:</labe> <br>
         <br>
         <mat-radio-group ngModel name="gender">
-          <mat-radio-button class="example-margin" value="Male">Male</mat-radio-button>
-          <mat-radio-button class="example-margin" value="Female">Female</mat-radio-button>
-          <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
+          <mat-radio-button value="Male">Male</mat-radio-button>
+          <mat-radio-button value="Female">Female</mat-radio-button>
+          <mat-radio-button value="Other">Other</mat-radio-button>
         </mat-radio-group>
       </section>
       <br>

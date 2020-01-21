@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
               "node_modules/font-awesome/scss/font-awesome.scss",
               "src/styles.css"

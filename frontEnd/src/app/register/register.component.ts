@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   register(user) {
     user.description = "jjjjjj";
-    user.image = "jjjjjj";
+    user.image = "";
     user.email = this.email.value;
     this.authService.existanceMail(user.email).then((result)=>{
       console.log(result);

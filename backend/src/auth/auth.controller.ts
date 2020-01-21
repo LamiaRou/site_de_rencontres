@@ -21,6 +21,11 @@ export class AuthController {
 
   @Post('register')
   async register(@Req() req): Promise<any> {
+   
+    await fs.readFile("./files/empty_profile.jpg", 'binary', (err, data) => {
+      const str = Buffer.from(data, 'binary').toString('base64');
+      req.body.image = str;
+    });
     return await this.authService.register(req.body);
   }
 
