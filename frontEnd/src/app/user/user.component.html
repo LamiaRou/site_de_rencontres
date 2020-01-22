@@ -1,12 +1,61 @@
-<mat-card>
-    <mat-card-content>
-       <img [src]="'data:image/jpg;base64,'+profile.image" class="imageProfile">
-      <mat-card-actions>
-        <button mat-raised-button color="primary">Load picture</button>
-      </mat-card-actions>
-      <h1> {{profile.address}}</h1>
-      <h1>{{profile.id}}</h1>
-      <h1>{{profile.name}}</h1>
-    </mat-card-content>
-</mat-card>
+<div class="bg-img">
+  <br>
+  <mat-card class="center">
+    <mat-card-content >
+      <form #user="ngForm">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First name" value="{{profile.fname}}" ngModel name="fname">
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" value="{{profile.lname}}" ngModel name="lname" >
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field>
+          <mat-label>Address postale</mat-label>
+          <input matInput #postalCode maxlength="5" placeholder="address" ngModel name="address">
+          <mat-hint>{{postalCode.value.length}} / 5</mat-hint>
+        </mat-form-field>
+        <br>
+  
+        <br>
+  
+        <div class="example-container">
+        <mat-form-field  class="full-width">
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" ngModel name="password" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        </div>
+  
+        <br>
+        <section>
+          <labe>Gender:</labe> <br>
+          <br>
+          <mat-radio-group ngModel name="gender">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+          </mat-radio-group>
+        </section>
+        <br>
+        <mat-form-field>
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" ngModel name="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </form>
+    </mat-card-content >
+  
+    <mat-card-actions>
+      <button mat-raised-button (click)="profiles_direct()" color="primary">REGISTER</button>
+    </mat-card-actions>
+    <p style="color: red;">{{mm}}</p>
+  </mat-card>
+  
+  </div>
   

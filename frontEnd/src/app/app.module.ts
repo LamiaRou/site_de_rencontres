@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component';
 import {MyMaterialModule} from './material.module';
 import {RouterModule} from '@angular/router';
 import {AuthService} from './service/auth.service';
+import {AuthGuard} from './service/auth-guard.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -44,12 +45,12 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
       {path: 'home', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'profiles', component: ProfilesListComponent},
+      {path: 'profiles', canActivate: [AuthGuard],component: ProfilesListComponent},
       {path: 'profiles/:id', component: ProfileComponent},
       {path: 'user/:id', component: UserComponent},
     ]),
   ],
-  providers: [AuthService, ProfilesService],
+  providers: [AuthService, ProfilesService, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

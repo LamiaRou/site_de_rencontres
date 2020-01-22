@@ -14,6 +14,7 @@ export class AuthService {
     return await new Promise(((resolve) => {
       this.http.post('http://localhost:3000/auth/login', user).subscribe(
         (val) => {
+          this.status = true;
           console.log('POST call successful value returned in body : ', val);
           resolve(val);
         },
@@ -32,6 +33,7 @@ export class AuthService {
     return await new Promise(((resolve) => {
       this.http.post('http://localhost:3000/auth/register', user).subscribe(
         (val) => {
+          this.status = true;
           console.log('POST call successful value returned in body : ', val);
           this.status = true;
           resolve(val);

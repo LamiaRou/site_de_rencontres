@@ -31,7 +31,6 @@ export class User {
   @Column()
   description : string;
 
-
   @Column()
   image : string;
 }

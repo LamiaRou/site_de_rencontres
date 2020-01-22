@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-user',
@@ -14,7 +15,7 @@ export class UserComponent implements OnInit {
     image: ''
   };
 
-  constructor(private authService: AuthService, private route: ActivatedRoute) {
+  constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -22,5 +23,9 @@ export class UserComponent implements OnInit {
       console.log('user : ', value);
       this.profile = value;
     });
+  }
+
+  profiles_direct(){
+    this.router.navigate(['profiles']);
   }
 }

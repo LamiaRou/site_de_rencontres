@@ -1,4 +1,14 @@
-.imageProfile{
-    width: 20%;
-    height: 20%; 
-}
+.center{
+    margin: auto;
+    justify-content: center; 
+    background : rgba(50, 50, 50, 0.5);
+  }
+  
+  .bg-img{
+   width: 100%;
+   background: url('../../../src/assets/user.png') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   }
