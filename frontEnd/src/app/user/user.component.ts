@@ -28,4 +28,5 @@ export class UserComponent implements OnInit {
   profiles_direct(){
     this.router.navigate(['profiles']);
   }
+  panelOpenState = false;
 }

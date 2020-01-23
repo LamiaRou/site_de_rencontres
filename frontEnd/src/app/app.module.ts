@@ -18,6 +18,8 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MyMaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatExpansionModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       {path: '', redirectTo: '/home', pathMatch: 'full'},
