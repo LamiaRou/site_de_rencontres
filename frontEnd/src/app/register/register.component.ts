@@ -11,6 +11,7 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   mm = '';
+
   constructor(private authService: AuthService, private router: Router) {
   }
 
@@ -18,22 +19,21 @@ export class RegisterComponent implements OnInit {
   }
 
   register(user) {
-    user.description = "jjjjjj";
-    user.image = "";
+    user.description = 'jjjjjj';
+    user.image = '';
     user.email = this.email.value;
-    this.authService.existanceMail(user.email).then((result)=>{
-      console.log(result);
-      if(result === null){
+    this.authService.existanceMail(user.email).then((result) => {
+      if (result === null) {
         this.authService.register(user).then((value: any) => {
-          if (value === 'not_found') {
+          if (value === null) {
             console.log('not_found');
           } else {
             console.log('login :', value);
             this.router.navigate(['user/:', {id: value.access_token}]);
           }
-          console.log(user.fname)
+          console.log(user.fname);
         });
-      }else{
+      } else {
         this.mm = 'This email already exists';
       }
     });
@@ -45,8 +45,8 @@ export class RegisterComponent implements OnInit {
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
-        this.email.hasError('email') ? 'Not a valid email' :
-            '';
+      this.email.hasError('email') ? 'Not a valid email' :
+        '';
   }
 
   hide = true;

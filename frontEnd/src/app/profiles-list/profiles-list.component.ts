@@ -1,39 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProfilesService} from '../service/profiles.service';
 import {ProfilePreview} from './profile-preview'
+
 @Component({
   selector: 'app-profiles-list',
   templateUrl: './profiles-list.component.html',
   styleUrls: ['./profiles-list.component.css']
 })
 export class ProfilesListComponent implements OnInit {
-selectedPokemons = {};
-	pokemons:any[];	
-	
-	Select(selectedPokemon:ProfilePreview){
-		this.pokemonService.togglePokemonSelected(selectedPokemon);
-	}
-	constructor(private pokemonService:ProfilesService) { }
-	
-	ngOnInit() {
+  selectedProfiles = {};
+  profiles: any[];
 
-		console.log('init');
-		this.pokemonService.getAll().subscribe(
-		products => {
-			this.pokemons = products;
-			console.log(this.pokemons)
+  Select(profilePreview: ProfilePreview) {
+    this.profilesService.toggleProfileSelected(profilePreview);
+  }
 
-		},
-		error => console.log(error)
-		);
+  constructor(private profilesService: ProfilesService) {
+  }
 
-		this.pokemonService.selectedPokemons$.subscribe((selectedPokemons) => {
-			this.selectedPokemons = selectedPokemons.reduce((acc, current) => {
-				acc[current] = true;
-				return acc;
-			}, {});
-			console.log(this.selectedPokemons);
-		})
-	}
+  ngOnInit() {
+
+    console.log('init');
+    this.profilesService.getAll().subscribe(
+      profiles => {
+        this.profiles = profiles;
+        console.log(this.profiles);
+
+      },
+      error => console.log(error)
+    );
+
+    this.profilesService.selectedProfiles$.subscribe((selectedProfiles) => {
+      this.selectedProfiles = selectedProfiles.reduce((acc, current) => {
+        acc[current] = true;
+        return acc;
+      }, {});
+      console.log(this.selectedProfiles);
+    });
+  }
 
 }

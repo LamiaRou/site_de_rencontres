@@ -33,7 +33,6 @@ export class AuthService {
     return await new Promise(((resolve) => {
       this.http.post('http://localhost:3000/auth/register', user).subscribe(
         (val) => {
-          this.status = true;
           console.log('POST call successful value returned in body : ', val);
           this.status = true;
           resolve(val);
@@ -59,18 +58,9 @@ export class AuthService {
     });
   }
 
-  async getProfile(id) {
-    return await new Promise((resolve) => {
-      this.http.post('http://localhost:3000/auth/profile/', {id}).subscribe(value => {
-        console.log('profile : ', value);
-        resolve(value);
-      });
-    });
-  }
-
   async existanceMail(email) {
     return await new Promise((resolve) => {
-      this.http.post('http://localhost:3000/auth/maill/', {email}).subscribe(value => {
+      this.http.get('http://localhost:3000/auth/login/' + email).subscribe(value => {
         console.log('email : ', value);
         resolve(value);
       });

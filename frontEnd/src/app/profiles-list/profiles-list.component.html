@@ -1,12 +1,12 @@
 <div class="preview"
-    *ngFor="let profile of pokemons">
+    *ngFor="let profile of profiles">
     <mat-card
         (click)="Select(profile)"
-        [class.selected-card]="selectedPokemons[profile.id]">
+        [class.selected-card]="selectedProfiles[profile.id]">
         <mat-card-header>
             <mat-card-title>{{profile.name}}</mat-card-title>
         </mat-card-header>
-        
+
         <mat-card-content>
             <img
                 class="thumbnail"

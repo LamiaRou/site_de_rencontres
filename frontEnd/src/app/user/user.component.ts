@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../service/auth.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from '../service/auth.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
     name: '',
     image: ''
   };
+  panelOpenState = false;
 
   constructor(private authService: AuthService, private route: ActivatedRoute, private router: Router) {
   }
@@ -25,8 +26,7 @@ export class UserComponent implements OnInit {
     });
   }
 
-  profiles_direct(){
+  profiles_direct() {
     this.router.navigate(['profiles']);
   }
-  panelOpenState = false;
 }

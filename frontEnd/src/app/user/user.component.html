@@ -7,10 +7,10 @@
         </mat-panel-title>
 
         <mat-panel-description>
-         UpDate your informations
+          UpDate your informations
         </mat-panel-description>
       </mat-expansion-panel-header>
-  
+
       <mat-form-field>
         <input matInput placeholder="First name" value="{{profile.fname}}" ngModel name="fname">
       </mat-form-field>
@@ -18,12 +18,10 @@
       <mat-form-field>
         <input matInput placeholder="Age">
       </mat-form-field>
-<br>
-<button mat-raised-button (click)="profiles_direct()" color="primary">UPDATA your profile</button>
+      <br>
+      <button mat-raised-button (click)="profiles_direct()" color="primary">UPDATA your profile</button>
     </mat-expansion-panel>
-</mat-accordion>
+  </mat-accordion>
 </form>
-   
-      <button mat-raised-button (click)="profiles_direct()" color="primary">PROFILES</button>
 
-  
+<button mat-raised-button (click)="profiles_direct()" color="primary">PROFILES</button>

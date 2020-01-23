@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -12,12 +12,11 @@ import {AuthGuard} from './service/auth-guard.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ProfileComponent} from './profile/profile.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import { ProfilesListComponent } from './profiles-list/profiles-list.component';
+import {ProfilesListComponent} from './profiles-list/profiles-list.component';
 import {ProfilesService} from './service/profiles.service';
-import { UserComponent } from './user/user.component';
-import { HomeComponent } from './home/home.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {UserComponent} from './user/user.component';
+import {HomeComponent} from './home/home.component';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
@@ -48,14 +47,14 @@ import {MatExpansionModule} from '@angular/material/expansion';
       {path: 'home', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'profiles', canActivate: [AuthGuard],component: ProfilesListComponent},
+      {path: 'profiles', canActivate: [AuthGuard], component: ProfilesListComponent},
       {path: 'profiles/:id', component: ProfileComponent},
       {path: 'user/:id', component: UserComponent},
     ]),
   ],
   providers: [AuthService, ProfilesService, AuthGuard],
   bootstrap: [AppComponent],
-  schemas: [ NO_ERRORS_SCHEMA ]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {
 }
