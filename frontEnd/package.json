@@ -23,7 +23,7 @@
     "@angular/router": "~8.2.14",
     "@ngmodule/material-carousel": "^0.5.1",
     "angular-bootstrap-md": "^8.8.1",
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.5.0",
     "font-awesome": "^4.7.0",
